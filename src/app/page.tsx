@@ -43,9 +43,9 @@ export default function Home() {
         <HowToBuy3D
           title="How to Buy"
           steps={[
-            {title: "Browse the catalog", description: "Explore our curated retro titles and bundles."},
-            {title: "Add to cart", description: "Choose your favorites and proceed to checkout."},
-            {title: "Checkout securely", description: "Review order and receive confirmation and shipping details."}
+            {title: "Browse the catalog", description: "Explore our curated retro titles and bundles.", image: '/images/browse.png', position: 'left', isCenter: true},
+            {title: "Add to cart", description: "Choose your favorites and proceed to checkout.", image: '/images/cart.png', position: 'center', isCenter: false},
+            {title: "Checkout securely", description: "Review order and receive confirmation and shipping details.", image: '/images/checkout.png', position: 'right', isCenter: true}
           ]}
         />
       </div>
