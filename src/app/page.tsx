@@ -12,7 +12,6 @@ export default function Home() {
     <SiteThemeProvider theme={{ styleVariant: 'funAndTrendy', colorTemplate: 1, textAnimation: 'slide' }}>
       <NavbarStyleMinimal
         logoSrc="/images/logo.svg"
-        logoAlt="RetroVault"
         logoWidth={150}
         logoHeight={40}
         buttonText="Shop Retro"
