@@ -71,7 +71,7 @@ export default function Home() {
           columns={[
             {title: "Explore", items: [{label: "About Us", onClick: () => console.log('About Us clicked!')}, {label: "Shop", onClick: () => console.log('Shop clicked!')}]},
             {title: "Support", items: [{label: "Help Center", onClick: () => console.log('Help Center clicked!')}, {label: "Contact", onClick: () => console.log('Contact clicked!')}]},
-            {title: "Legal", items: [{label: "Privacy Policy", onClick: () => console.log('Privacy Policy clicked!')}, {label: "Terms of Service", onClick: () => console.log('Terms of Service clicked!')}]}
+            {title: "Legal", items: [{label: "Privacy Policy", onClick: () => console.log('Privacy Policy clicked!')}, {label: "Terms of Service", onClick: () => console.log('Terms of Service clicked!' )}]}
           ]}
           copyrightText="© 2023 RetroVault. All rights reserved."
           onPrivacyClick={() => console.log('Privacy clicked.')}
