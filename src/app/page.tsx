@@ -1,38 +1,35 @@
 "use client";
 import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
-import NavbarLayoutSplitBottom from '@/components/navigation/NavbarLayoutSplitBottom/NavbarLayoutSplitBottom';
-import TokenBillboardHero from '@/components/sections/layouts/hero/TokenBillboardHero';
+import NavbarStyleMinimal from '@/components/navigation/NavbarStyleMinimal';
+import SplitHero from '@/components/sections/layouts/hero/SplitHero';
 import SocialsAbout from '@/components/sections/layouts/about/SocialsAbout';
-import HowToBuy2D from '@/components/sections/layouts/howtobuy/2DHTB';
-import TextGridTokenomics from '@/components/sections/layouts/tokenomics/TextGridTokenomics';
-import FooterLogoEmphasis from '@/components/footer/FooterLogoEmphasis';
+import HowToBuy3D from '@/components/sections/layouts/howtobuy/3DHTB';
+import BigNumberTokenomics from '@/components/sections/layouts/tokenomics/BigNumberTokenomics';
+import FooterLogo from '@/components/footer/FooterLogo';
 
 export default function Home() {
   return (
     <SiteThemeProvider theme={{ styleVariant: 'funAndTrendy', colorTemplate: 1, textAnimation: 'slide' }}>
-      <NavbarLayoutSplitBottom
+      <NavbarStyleMinimal
         logoSrc="/images/logo.svg"
+        logoAlt="RetroVault"
         logoWidth={150}
         logoHeight={40}
         buttonText="Shop Retro"
-        onButtonClick={() => { /* Handle click event */ }}
-        navItems={[
-          { name: 'Hero', id: 'hero' },
-          { name: 'About', id: 'about' },
-          { name: 'How to Buy', id: 'how-to-buy' },
-          { name: 'Tokenomics', id: 'tokenomics' },
-          { name: 'Footer', id: 'footer' },
-        ]}
+        onButtonClick={() => console.log('Shop Retro clicked!')} 
       />
+
       <div id="hero" data-section="hero" className="scroll-mt-24">
-        <TokenBillboardHero
+        <SplitHero
           title="Welcome to RetroVault"
-          subtitle="Your gateway to classic gaming."
-          contractAddress="0x123456789"
-          copyButtonText="Copy Address"
-          copiedText="Address copied!"
+          subtitle="Your gateway to classic gaming"
+          primaryButtonText="Shop Now"
+          secondaryButtonText="Learn More"
+          onPrimaryButtonClick={() => console.log('Shop Now clicked!')}
+          onSecondaryButtonClick={() => console.log('Learn More clicked!')}
         />
       </div>
+
       <div id="about" data-section="about" className="scroll-mt-24">
         <SocialsAbout
           title="Welcome to RetroVault — your gateway to classic gaming."
@@ -42,21 +39,23 @@ export default function Home() {
           ]}
         />
       </div>
+
       <div id="how-to-buy" data-section="how-to-buy" className="scroll-mt-24">
-        <HowToBuy2D
-          variant="reveal"
+        <HowToBuy3D
+          title="How to Buy"
           steps={[
-            { title: "Browse the catalog", description: "Explore our curated retro titles and bundles." },
-            { title: "Add to cart", description: "Choose your favorites and proceed to checkout." },
-            { title: "Checkout securely", description: "Review order and receive confirmation and shipping details." }
+            {title: "Browse the catalog", description: "Explore our curated retro titles and bundles."},
+            {title: "Add to cart", description: "Choose your favorites and proceed to checkout."},
+            {title: "Checkout securely", description: "Review order and receive confirmation and shipping details."}
           ]}
         />
       </div>
+
       <div id="tokenomics" data-section="tokenomics" className="scroll-mt-24">
-        <TextGridTokenomics
-          title="Our Key Metrics"
+        <BigNumberTokenomics
+          title="Our Stats"
           description="We highlight strong relationships with trusted suppliers and verify playability to ensure a satisfying retro gaming experience."
-          tokenData={[
+          kpiItems={[
             { value: "120+", description: "Games in Catalog" },
             { value: "400+", description: "Items Tested Weekly" },
             { value: "4.7/5", description: "Average Rating" },
@@ -64,27 +63,19 @@ export default function Home() {
           ]}
         />
       </div>
+
       <div id="footer" data-section="footer" className="scroll-mt-24">
-        <FooterLogoEmphasis
+        <FooterLogo
           logoSrc="/images/logo.svg"
-          logoAlt="RetroVault Logo"
+          logoAlt="RetroVault"
           logoText="RetroVault"
           columns={[
-            { items: [
-              { label: "Home", onClick: () => { /* Handle click */ } },
-              { label: "About", onClick: () => { /* Handle click */ } }
-            ]},
-            { items: [
-              { label: "How to Buy", onClick: () => { /* Handle click */ } },
-              { label: "Tokenomics", onClick: () => { /* Handle click */ } }
-            ]},
-            { items: [
-              { label: "Contact", onClick: () => { /* Handle click */ } },
-              { label: "Privacy Policy", onClick: () => { /* Handle click */ } }
-            ]}
+            {title: "Explore", items: [{label: "About Us", onClick: () => console.log('About Us clicked!')}, {label: "Shop", onClick: () => console.log('Shop clicked!')}]},
+            {title: "Support", items: [{label: "Help Center", onClick: () => console.log('Help Center clicked!')}, {label: "Contact", onClick: () => console.log('Contact clicked!')}]},
+            {title: "Legal", items: [{label: "Privacy Policy", onClick: () => console.log('Privacy Policy clicked!')}, {label: "Terms of Service", onClick: () => console.log('Terms of Service clicked!')}]}
           ]}
           copyrightText="© 2023 RetroVault. All rights reserved."
-          onPrivacyClick={() => { /* Handle Privacy click */ }}
+          onPrivacyClick={() => console.log('Privacy clicked.')}
         />
       </div>
     </SiteThemeProvider>
